@@ -1,436 +1,374 @@
-## Pendahuluan
+# Dekomposisi_P15_23343082_RendiAigoBrandon
 
-AI on-device dipilih karena merupakan salah satu tren mobile computing yang paling relevan bagi developer Flutter. Teknologi ini memungkinkan model kecerdasan buatan dijalankan langsung pada smartphone tanpa selalu mengirim data ke server cloud. Pendekatan tersebut memberikan keuntungan berupa latensi rendah, kemampuan bekerja secara offline, perlindungan privasi, dan pengurangan biaya pemrosesan server.
+## Aktivitas Dekomposisi  
+### Analisis Mendalam Tren dan Roadmap Mobile AI Developer
 
-Bagi developer Flutter di Indonesia, AI on-device dapat diterapkan pada aplikasi pendidikan, kesehatan, pertanian, layanan publik, keuangan, dan UMKM. Contoh fitur yang dapat dibuat adalah OCR, pemindaian dokumen, pengenalan objek, deteksi pose, penerjemahan, klasifikasi gambar, dan rekomendasi lokal.
+**Nama:** Rendi Aigo Brandon  
+**NIM:** 23343082  
+**Mata Kuliah:** Mobile Programming Lanjutan  
+**Pertemuan:** 15  
+**Topik:** Tren Terkini Mobile Computing  
+**Tren yang Dipilih:** AI on-device  
+**Format Dokumentasi:** GitHub README.md / Notion  
 
 ---
 
-# 1. Dekomposisi Mendalam Tren AI On-Device
+## 1. Pendahuluan
 
-## 1.1 Definisi dan Sejarah Singkat
+Perkembangan mobile computing saat ini tidak hanya berfokus pada tampilan aplikasi, performa UI, atau integrasi API, tetapi juga mulai mengarah pada kemampuan aplikasi untuk menjadi lebih cerdas. Salah satu tren yang paling relevan dengan masa depan pengembangan aplikasi mobile adalah **AI on-device**, yaitu penerapan kecerdasan buatan yang dijalankan langsung di perangkat pengguna seperti smartphone atau tablet.
 
-AI on-device adalah pendekatan pemrosesan kecerdasan buatan yang menjalankan model machine learning langsung pada perangkat pengguna, seperti smartphone, tablet, wearable device, atau embedded device. Data pengguna tidak harus dikirim ke cloud untuk diproses karena proses inferensi dilakukan secara lokal.
-
-Pada tahap awal, AI di perangkat mobile umumnya hanya digunakan untuk tugas sederhana, seperti pengenalan wajah dan klasifikasi gambar. Perkembangan kemampuan CPU, GPU, dan Neural Processing Unit atau NPU membuat model yang lebih kompleks dapat dijalankan pada perangkat. Framework seperti TensorFlow Lite, Google ML Kit, Core ML, dan MediaPipe kemudian mempermudah developer mengintegrasikan kemampuan AI ke aplikasi mobile.
-
-Saat ini, AI on-device telah berkembang ke pengenalan teks, deteksi objek, segmentasi gambar, penerjemahan, analisis pose, rekomendasi, sampai model bahasa berukuran kecil. Perkembangan ini menunjukkan bahwa smartphone mulai berfungsi sebagai perangkat komputasi AI mandiri, bukan hanya sebagai antarmuka menuju layanan cloud.
-
-## 1.2 Teknologi Pemungkin
-
-Beberapa teknologi utama yang memungkinkan AI on-device adalah sebagai berikut.
-
-### a. Perangkat keras mobile
-
-Smartphone modern memiliki CPU, GPU, dan NPU yang mampu menjalankan operasi machine learning dengan lebih cepat dan hemat daya. NPU dirancang khusus untuk mempercepat proses inferensi AI.
-
-### b. Model compression
-
-Model AI perlu diperkecil agar dapat berjalan pada perangkat dengan memori dan daya terbatas. Teknik yang umum digunakan antara lain:
-
-- Quantization
-- Pruning
-- Knowledge distillation
-- Model optimization
-- Weight compression
-
-### c. TensorFlow Lite
-
-TensorFlow Lite digunakan untuk menjalankan model machine learning berformat `.tflite` pada Android, iOS, dan embedded device. Dalam Flutter, integrasinya dapat dilakukan menggunakan package `tflite_flutter`.
-
-### d. Google ML Kit
-
-ML Kit menyediakan model siap pakai untuk kebutuhan umum, seperti:
-
-- Text recognition atau OCR
-- Barcode scanning
-- Face detection
-- Pose detection
-- Language identification
-- Translation
-
-Package Flutter yang tersedia menggunakan pola nama `google_mlkit_*`.
-
-### e. MediaPipe
-
-MediaPipe menyediakan pipeline AI untuk pemrosesan gambar, audio, pose, gesture, dan model bahasa lokal. Teknologi ini dapat digunakan untuk fitur real-time yang membutuhkan integrasi kamera.
-
-### f. Android Keystore dan iOS Keychain
-
-Walaupun bukan mesin AI, mekanisme ini penting untuk melindungi token, konfigurasi, dan kunci yang digunakan aplikasi. Keamanan penyimpanan tetap diperlukan meskipun data diproses secara lokal.
-
-## 1.3 Contoh Implementasi Nyata
-
-### a. Pemindai dokumen
-
-Aplikasi menggunakan kamera dan OCR untuk membaca teks pada KTP, kartu mahasiswa, formulir, nota, atau dokumen. Pemrosesan dapat dilakukan langsung pada perangkat sehingga data sensitif tidak harus dikirim ke server.
-
-### b. Deteksi objek untuk pertanian
-
-Aplikasi dapat membantu petani mengenali penyakit pada daun, jenis tanaman, atau kondisi hasil panen melalui kamera smartphone. Fitur ini berguna di daerah dengan koneksi internet yang terbatas.
-
-### c. Aplikasi kebugaran
-
-Pose detection dapat digunakan untuk mengevaluasi gerakan olahraga, menghitung repetisi, dan memberikan umpan balik posisi tubuh secara real-time.
-
-### d. Penerjemah offline
-
-Model penerjemahan lokal dapat membantu pengguna menerjemahkan teks tanpa koneksi internet. Fitur ini berguna untuk pendidikan, perjalanan, dan pelayanan publik.
-
-### e. Aksesibilitas
-
-Aplikasi dapat mengenali objek atau teks lalu membacakannya kepada pengguna dengan gangguan penglihatan.
-
-### f. Klasifikasi produk UMKM
-
-Kamera dapat digunakan untuk mengidentifikasi kategori produk, memeriksa kondisi barang, atau membantu proses pencatatan stok.
-
-## 1.4 Peluang untuk Developer Flutter
-
-AI on-device membuka beberapa peluang bagi developer Flutter, antara lain:
-
-1. Mobile AI Developer  
-   Mengembangkan aplikasi Flutter yang memiliki fitur OCR, deteksi objek, klasifikasi gambar, rekomendasi, atau chatbot lokal.
-
-2. Developer aplikasi kesehatan digital  
-   Membuat fitur analisis pose, pencatatan kesehatan, pengenalan dokumen medis, atau monitoring kebiasaan pengguna.
-
-3. Developer EdTech  
-   Mengembangkan aplikasi pembelajaran adaptif, pemeriksa jawaban, pemindai soal, penerjemah, dan asisten belajar offline.
-
-4. Developer AgriTech  
-   Membuat aplikasi identifikasi tanaman, klasifikasi hasil panen, atau deteksi penyakit berbasis kamera.
-
-5. Developer layanan publik  
-   Mengembangkan aplikasi pemindaian dokumen, antrean digital, pengenalan formulir, dan pelayanan masyarakat.
-
-6. Freelance developer  
-   Menawarkan integrasi AI sederhana kepada UMKM, sekolah, lembaga pelatihan, klinik, dan instansi lokal.
-
-Flutter memiliki keunggulan karena satu codebase dapat digunakan untuk Android dan iOS. Developer juga dapat menghubungkan Flutter dengan kode native melalui platform channel apabila fitur AI tertentu belum tersedia dalam package.
-
-## 1.5 Tantangan Adopsi di Indonesia
-
-### a. Fragmentasi perangkat
-
-Tidak semua pengguna memiliki smartphone dengan RAM besar, NPU, atau prosesor yang kuat. Aplikasi harus diuji pada perangkat kelas rendah, menengah, dan tinggi.
-
-### b. Ukuran aplikasi
-
-Model AI dapat meningkatkan ukuran APK atau IPA. Developer perlu menggunakan model yang kecil dan mengunduh model sesuai kebutuhan jika memungkinkan.
-
-### c. Konsumsi baterai
-
-Inferensi yang dilakukan terlalu sering dapat meningkatkan penggunaan CPU, suhu perangkat, dan konsumsi baterai.
-
-### d. Keterbatasan dataset lokal
-
-Model global belum tentu akurat untuk bahasa, objek, kondisi lingkungan, dan karakteristik pengguna Indonesia. Dibutuhkan dataset yang relevan dengan konteks lokal.
-
-### e. Ketersediaan sumber daya manusia
-
-Tidak semua developer mobile memahami machine learning, pengolahan data, optimasi model, dan evaluasi akurasi.
-
-### f. Privasi dan etika
-
-Pemrosesan lokal memang mengurangi pengiriman data ke cloud, tetapi developer tetap harus menjelaskan izin kamera, mikrofon, lokasi, dan penggunaan data kepada pengguna.
-
-### g. Pemeliharaan model
-
-Model perlu diperbarui ketika data berubah, akurasi menurun, atau ditemukan bias. Pemeliharaan model harus menjadi bagian dari siklus pengembangan aplikasi.
-
-## 1.6 Proyeksi Tiga sampai Lima Tahun ke Depan
-
-Dalam tiga sampai lima tahun ke depan, AI on-device diperkirakan akan semakin umum pada aplikasi mobile. Model akan menjadi lebih kecil, cepat, dan hemat daya. Smartphone kelas menengah juga akan memiliki kemampuan AI yang lebih baik.
-
-Beberapa perkembangan yang diperkirakan terjadi adalah:
-
-- OCR, penerjemahan, dan deteksi objek menjadi fitur standar.
-- On-device LLM mulai digunakan untuk ringkasan, pencarian, dan asisten lokal.
-- Aplikasi semakin menggunakan personalisasi tanpa mengirim seluruh data pengguna ke server.
-- Model hybrid akan berkembang, yaitu tugas sederhana diproses di perangkat dan tugas berat dikirim ke cloud.
-- AI on-device akan semakin terintegrasi dengan kamera, wearable device, IoT, dan augmented reality.
-- Kebutuhan developer yang memahami Flutter sekaligus machine learning akan meningkat.
+Tren ini dipilih karena memiliki hubungan yang kuat dengan Flutter dan peluang karier sebagai **Mobile AI Developer**. Dengan AI on-device, aplikasi mobile dapat melakukan pemrosesan cerdas seperti pengenalan teks, deteksi objek, klasifikasi gambar, penerjemahan, rekomendasi, hingga chatbot lokal tanpa selalu bergantung pada server cloud. Hal ini sangat penting untuk konteks Indonesia karena masih terdapat perbedaan kualitas jaringan internet antarwilayah, variasi spesifikasi perangkat, dan kebutuhan privasi data pengguna.
 
 ---
 
-# 2. Roadmap Menjadi Mobile AI Developer
+## 2. Dekomposisi Mendalam Tren AI On-Device
 
-## 2.1 Keahlian Dasar Flutter yang Harus Dimiliki
+### 2.1 Definisi dan Sejarah Singkat
 
-Sebelum mempelajari Mobile AI, developer perlu menguasai:
+**AI on-device** adalah konsep menjalankan model kecerdasan buatan langsung pada perangkat pengguna, bukan sepenuhnya mengirim data ke server cloud untuk diproses. Pada pendekatan tradisional, aplikasi mobile biasanya mengirim data pengguna ke server, lalu server melakukan proses AI dan mengembalikan hasilnya. Pada AI on-device, proses inferensi dilakukan di dalam perangkat sehingga respons aplikasi bisa lebih cepat, tetap berjalan dalam kondisi offline, dan lebih aman untuk data sensitif.
 
-- Dasar bahasa Dart
-- Widget stateless dan stateful
-- Layout dan responsive design
-- Navigation dan routing
-- State management
-- REST API dan JSON
-- Asynchronous programming
-- Local storage
-- Camera dan image picker
-- Permission handling
-- Error handling
-- Clean Architecture
-- Unit test, widget test, dan integration test
-- Git dan GitHub
+Secara historis, AI di perangkat mobile mulai berkembang dari fitur sederhana seperti face detection pada kamera, auto-focus, barcode scanning, dan klasifikasi gambar. Perkembangannya semakin kuat setelah perangkat mobile memiliki prosesor yang lebih cepat, GPU yang lebih baik, serta akselerator AI seperti NPU. Selain itu, teknologi kompresi model seperti quantization dan pruning membuat model AI dapat dibuat lebih kecil sehingga memungkinkan dijalankan pada smartphone.
 
-## 2.2 Package yang Perlu Dipelajari
+Dalam beberapa tahun terakhir, AI on-device berkembang dari sekadar computer vision menuju generative AI ringan. Model bahasa berukuran kecil mulai dapat dijalankan pada perangkat tertentu untuk kebutuhan seperti ringkasan teks, pencarian lokal, dan chatbot offline. Hal ini menunjukkan bahwa masa depan aplikasi mobile tidak hanya menjadi client dari server, tetapi juga dapat menjadi tempat pemrosesan cerdas secara mandiri.
 
-### Package utama AI
+---
 
-- `tflite_flutter`
-- `google_mlkit_text_recognition`
-- `google_mlkit_object_detection`
-- `google_mlkit_face_detection`
-- `google_mlkit_pose_detection`
-- `google_mlkit_translation`
-- `google_mlkit_barcode_scanning`
+### 2.2 Teknologi Pemungkin
 
-### Package pendukung
+AI on-device dapat berjalan karena adanya kombinasi antara perangkat keras, framework machine learning, dan dukungan integrasi ke aplikasi mobile.
 
-- `camera`
-- `image_picker`
-- `permission_handler`
-- `path_provider`
-- `image`
-- `flutter_isolate`
-- `dio`
-- `hive` atau `isar`
-- `flutter_secure_storage`
+```mermaid
+flowchart TD
+    A[AI On-Device] --> B[Hardware Mobile]
+    A --> C[Model Optimization]
+    A --> D[Framework AI]
+    A --> E[Integrasi Flutter]
 
-## 2.3 Proyek Latihan yang Harus Dibuat
+    B --> B1[CPU]
+    B --> B2[GPU]
+    B --> B3[NPU / AI Accelerator]
 
-### Proyek 1: OCR Scanner
+    C --> C1[Quantization]
+    C --> C2[Pruning]
+    C --> C3[Model Compression]
 
-Fitur:
+    D --> D1[TensorFlow Lite / LiteRT]
+    D --> D2[Google ML Kit]
+    D --> D3[MediaPipe LLM Inference]
+    D --> D4[Core ML untuk iOS]
 
-- Mengambil gambar dari kamera
-- Mengenali teks menggunakan ML Kit
-- Menyalin dan menyimpan hasil OCR
-- Mengekspor hasil ke format teks
-
-Tujuan: memahami integrasi kamera, permission, dan model AI siap pakai.
-
-### Proyek 2: Klasifikasi Gambar
-
-Fitur:
-
-- Menggunakan model `.tflite`
-- Memilih gambar dari galeri atau kamera
-- Menampilkan label dan confidence score
-- Menangani kesalahan model
-
-Tujuan: memahami TensorFlow Lite dan proses inferensi.
-
-### Proyek 3: Deteksi Objek Real-Time
-
-Fitur:
-
-- Kamera real-time
-- Bounding box
-- Label objek
-- Pengaturan frame rate
-
-Tujuan: memahami optimasi performa dan pemrosesan gambar.
-
-### Proyek 4: Pose Detection untuk Olahraga
-
-Fitur:
-
-- Mendeteksi titik tubuh
-- Menghitung repetisi
-- Memberikan peringatan posisi
-- Menyimpan riwayat latihan
-
-Tujuan: memahami data landmark dan logika analisis gerakan.
-
-### Proyek 5: Aplikasi AI Kontekstual Indonesia
-
-Contoh:
-
-- Deteksi penyakit daun
-- Pemindai dokumen sekolah
-- Penerjemah istilah lokal
-- Klasifikasi produk UMKM
-
-Tujuan: menghasilkan portofolio yang relevan dengan kebutuhan Indonesia.
-
-## 2.4 Portofolio yang Dibutuhkan
-
-Portofolio Mobile AI Developer sebaiknya memiliki:
-
-- Minimal tiga proyek Flutter berbasis AI
-- README yang menjelaskan masalah, solusi, arsitektur, dan package
-- Screenshot atau video demo
-- Diagram alur inferensi
-- Penjelasan sumber dan format model
-- Hasil pengujian pada beberapa perangkat
-- Pengukuran waktu inferensi
-- Penjelasan privasi pengguna
-- Unit test dan integration test
-- Release APK atau tautan demo
-- Commit Git yang teratur
-- Dokumentasi kendala dan solusi
-
-Contoh struktur repository:
-
-```text
-mobile-ai-project/
-├── assets/
-│   └── models/
-├── lib/
-│   ├── core/
-│   ├── features/
-│   ├── models/
-│   ├── services/
-│   └── main.dart
-├── test/
-├── screenshots/
-├── README.md
-└── pubspec.yaml
+    E --> E1[tflite_flutter]
+    E --> E2[google_mlkit_*]
+    E --> E3[camera]
+    E --> E4[permission_handler]
 ```
 
-## 2.5 Target Perusahaan dan Sektor di Indonesia
+Beberapa teknologi utama yang memungkinkan AI on-device adalah:
 
-Target karier dapat diarahkan ke:
-
-- Halodoc
-- Alodokter
-- Perusahaan EdTech
-- Startup AgriTech
-- Perusahaan fintech
-- GovTech dan layanan pendidikan pemerintah
-- Perusahaan manufaktur yang menerapkan Industri 4.0
-- Konsultan transformasi digital
-- Software house dan agency
-- Startup yang mengembangkan produk mobile berbasis AI
-
-Posisi yang dapat ditargetkan:
-
-- Flutter Developer
-- Mobile Application Developer
-- Mobile AI Engineer
-- Machine Learning Mobile Engineer
-- AI Integration Developer
-- Computer Vision Developer
-- IoT Mobile Developer
-- Software Engineer
+| Teknologi | Fungsi |
+|---|---|
+| **TensorFlow Lite / LiteRT** | Menjalankan model machine learning yang sudah dikonversi agar ringan dan efisien di perangkat mobile. |
+| **Google ML Kit** | Menyediakan fitur AI siap pakai seperti text recognition, barcode scanning, face detection, image labeling, dan translation. |
+| **MediaPipe LLM Inference** | Mendukung eksperimen model bahasa besar yang dijalankan langsung di perangkat. |
+| **NPU / GPU Delegate** | Mempercepat proses inferensi agar tidak hanya mengandalkan CPU. |
+| **Model Compression** | Mengurangi ukuran model agar lebih ringan, cepat, dan tidak terlalu membebani memori. |
+| **Flutter Packages** | Menjadi penghubung antara aplikasi Flutter dengan fitur AI on-device. |
 
 ---
 
-# 3. Daftar Subtopik Berdasarkan Urgensi dan Tingkat Kesulitan
+### 2.3 Contoh Implementasi Nyata
 
-## 3.1 Fondasi — Wajib Dipelajari Sekarang
+Contoh implementasi AI on-device yang sudah banyak ditemukan pada aplikasi mobile antara lain:
 
-Tingkat kesulitan: dasar sampai menengah.
+1. **OCR Scanner**  
+   Aplikasi dapat membaca teks dari gambar, KTP, struk belanja, nota, kartu nama, atau dokumen. Fitur ini bisa dibuat menggunakan Google ML Kit Text Recognition.
 
-- Dart dan Flutter fundamentals
-- Responsive layout
-- State management
-- REST API
-- Asynchronous programming
-- Camera dan image picker
-- Permission handling
-- Local storage
-- Git dan GitHub
-- Dasar machine learning
-- Perbedaan training dan inference
-- Classification, detection, dan regression
-- Dasar penggunaan ML Kit
-- Dasar penggunaan TensorFlow Lite
-- Privasi dan keamanan data
-- Pengujian pada perangkat fisik
+2. **Barcode dan QR Code Scanner**  
+   Aplikasi kasir, inventaris, dan ticketing dapat membaca barcode atau QR secara langsung dari kamera tanpa perlu server.
 
-Target hasil:
+3. **Face Detection dan Pose Detection**  
+   Digunakan pada aplikasi kesehatan, olahraga, absensi, keamanan, dan filter kamera.
 
-- Satu aplikasi OCR
-- Satu aplikasi klasifikasi gambar
-- README dan video demo
+4. **Object Detection**  
+   Aplikasi dapat mengenali objek tertentu, misalnya produk toko, jenis tanaman, sampah organik/anorganik, atau komponen industri.
 
-## 3.2 Menengah — Tiga Bulan ke Depan
+5. **On-device Translation**  
+   Aplikasi dapat menerjemahkan teks secara lokal sehingga tetap dapat digunakan saat koneksi internet terbatas.
 
-Tingkat kesulitan: menengah.
+6. **Chatbot Offline Ringan**  
+   Pada perangkat yang mendukung, aplikasi dapat menyediakan asisten lokal untuk menjawab pertanyaan dasar, membuat ringkasan, atau membantu navigasi aplikasi.
 
-- Custom model TensorFlow Lite
-- Preprocessing gambar
-- Post-processing hasil inferensi
-- Confidence threshold
-- Object detection real-time
-- Pose detection
-- Isolate untuk proses berat
-- Optimasi frame rate
-- Clean Architecture
-- BLoC atau Riverpod
-- Unit test dan integration test
-- Model quantization
-- Evaluasi akurasi
-- Pengukuran latensi
-- Optimasi ukuran aplikasi
-- Integrasi backend sederhana
+Contoh ide implementasi dengan Flutter:
 
-Target hasil:
+```dart
+import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 
-- Aplikasi deteksi objek real-time
-- Aplikasi pose detection
-- Portofolio GitHub minimal tiga repository
+class OcrService {
+  final TextRecognizer _recognizer =
+      TextRecognizer(script: TextRecognitionScript.latin);
 
-## 3.3 Lanjutan — Enam sampai Dua Belas Bulan ke Depan
+  Future<String> recognizeTextFromImage(String imagePath) async {
+    final inputImage = InputImage.fromFilePath(imagePath);
+    final RecognizedText result =
+        await _recognizer.processImage(inputImage);
 
-Tingkat kesulitan: lanjut.
+    return result.text;
+  }
 
-- Training model sendiri
-- Dataset collection dan labeling
-- Transfer learning
-- Model pruning
-- Knowledge distillation
-- MediaPipe
-- On-device LLM
-- Retrieval-Augmented Generation lokal
-- Federated learning
-- Hybrid AI: on-device dan cloud
-- Platform channel Kotlin dan Swift
-- GPU dan NPU acceleration
-- Keamanan model
-- Deteksi model tampering
-- AI ethics dan bias
-- CI/CD untuk aplikasi mobile AI
-- Monitoring performa model
-- Kontribusi package open-source
+  Future<void> dispose() async {
+    await _recognizer.close();
+  }
+}
+```
 
-Target hasil:
-
-- Satu aplikasi AI yang menyelesaikan masalah lokal
-- Publikasi aplikasi atau open beta
-- Kontribusi open-source
-- Artikel teknis atau video tutorial
-- Portofolio siap melamar pekerjaan
+Kode di atas menunjukkan konsep sederhana penggunaan OCR pada Flutter. Aplikasi mengambil gambar, mengubahnya menjadi `InputImage`, lalu memprosesnya menggunakan `TextRecognizer`. Hasil akhirnya berupa teks yang berhasil dikenali dari gambar.
 
 ---
 
-# Rencana Belajar Dua Belas Bulan
+### 2.4 Peluang untuk Developer Flutter
 
-| Periode | Fokus | Hasil |
+AI on-device membuka peluang besar bagi developer Flutter karena Flutter dapat digunakan untuk membuat aplikasi lintas platform dengan satu basis kode. Artinya, developer dapat mengembangkan aplikasi Android dan iOS dengan UI yang konsisten, lalu menambahkan fitur AI melalui package yang tersedia.
+
+Peluang yang dapat dimanfaatkan developer Flutter antara lain:
+
+- **Aplikasi produktivitas cerdas**, seperti scanner dokumen, pencatat otomatis, dan pengelola tugas dengan rekomendasi.
+- **Aplikasi pendidikan**, misalnya OCR untuk membaca soal, aplikasi belajar bahasa, atau kuis adaptif.
+- **Aplikasi kesehatan digital**, seperti deteksi pose olahraga, pengingat obat, atau analisis gambar sederhana.
+- **Aplikasi UMKM**, misalnya pembaca nota, pencatatan stok otomatis, dan kasir dengan barcode scanner.
+- **Aplikasi pertanian**, seperti klasifikasi tanaman, deteksi penyakit daun, atau pencatatan hasil panen berbasis kamera.
+- **Aplikasi aksesibilitas**, seperti pembaca teks untuk pengguna dengan keterbatasan penglihatan.
+
+Bagi mahasiswa atau junior developer, tren ini juga cocok dijadikan portofolio karena dapat ditampilkan secara nyata melalui demo aplikasi, video, screenshot, dan repository GitHub.
+
+---
+
+### 2.5 Tantangan Adopsi di Indonesia
+
+Walaupun AI on-device memiliki potensi besar, penerapannya di Indonesia memiliki beberapa tantangan.
+
+Pertama, **fragmentasi perangkat** masih menjadi masalah. Tidak semua pengguna memiliki smartphone dengan spesifikasi tinggi. Banyak perangkat entry-level memiliki RAM, penyimpanan, dan prosesor terbatas. Hal ini membuat developer harus memilih model yang ringan serta melakukan pengujian pada berbagai jenis perangkat.
+
+Kedua, **ukuran aplikasi dapat membesar** karena model AI biasanya ditambahkan sebagai file aset. Jika ukuran aplikasi terlalu besar, pengguna mungkin enggan mengunduhnya, terutama yang memiliki keterbatasan kuota internet atau penyimpanan.
+
+Ketiga, **konsumsi baterai dan suhu perangkat** perlu diperhatikan. Inferensi AI, terutama pada kamera real-time atau model besar, dapat membuat baterai lebih cepat habis dan perangkat menjadi panas.
+
+Keempat, **akurasi model pada konteks lokal** juga menjadi tantangan. Model global belum tentu optimal untuk bahasa daerah, variasi dokumen lokal, kualitas kamera murah, atau kondisi pencahayaan yang berbeda.
+
+Kelima, **kompetensi developer** masih perlu ditingkatkan. Developer Flutter tidak cukup hanya memahami widget dan UI, tetapi juga perlu memahami dasar machine learning, pengelolaan model, performa aplikasi, privasi data, dan pengujian.
+
+---
+
+### 2.6 Proyeksi 3–5 Tahun ke Depan
+
+Dalam 3–5 tahun ke depan, AI on-device diproyeksikan menjadi fitur standar pada banyak aplikasi mobile. Aplikasi tidak lagi hanya menampilkan data, tetapi juga akan membantu pengguna mengambil keputusan, memahami konteks, dan melakukan otomatisasi sederhana.
+
+Prediksi perkembangan AI on-device:
+
+1. **Hybrid AI akan menjadi pola utama**  
+   Aplikasi akan menggabungkan AI lokal dan AI cloud. Tugas ringan seperti OCR, klasifikasi sederhana, dan rekomendasi lokal berjalan di perangkat, sedangkan tugas berat tetap diproses di server.
+
+2. **Model kecil semakin kuat**  
+   Model bahasa berukuran kecil akan semakin efisien sehingga dapat berjalan di lebih banyak smartphone kelas menengah.
+
+3. **Flutter semakin relevan untuk prototyping AI mobile**  
+   Flutter memungkinkan developer membuat UI cepat, menguji integrasi AI, dan membuat produk lintas platform tanpa membangun dua aplikasi terpisah.
+
+4. **Privasi menjadi nilai jual utama**  
+   Aplikasi yang mampu memproses data sensitif di perangkat akan lebih dipercaya, terutama pada sektor kesehatan, keuangan, pendidikan, dan identitas digital.
+
+5. **Kebutuhan Mobile AI Developer meningkat**  
+   Perusahaan akan membutuhkan developer yang mampu menggabungkan mobile engineering, AI integration, UI/UX, dan pemahaman performa perangkat.
+
+---
+
+## 3. Roadmap Menjadi Mobile AI Developer
+
+### 3.1 Keahlian Dasar Flutter yang Sudah Dimiliki
+
+Untuk menjadi Mobile AI Developer, dasar Flutter yang perlu dikuasai meliputi:
+
+| Keahlian Dasar | Keterangan |
+|---|---|
+| Dart Fundamental | Variabel, function, class, async-await, null safety. |
+| Flutter Widget | StatelessWidget, StatefulWidget, layout, form, navigation. |
+| UI/UX Mobile | Membuat tampilan responsif dan mudah digunakan. |
+| State Management | Provider, Riverpod, BLoC, atau GetX sesuai kebutuhan project. |
+| API Integration | Menghubungkan aplikasi dengan REST API menggunakan http atau dio. |
+| Local Storage | SharedPreferences, Hive, SQLite, atau Isar. |
+| Asset Management | Menambahkan model `.tflite`, gambar, file JSON, dan konfigurasi ke dalam project. |
+| Git dan GitHub | Mengelola versi kode dan membuat dokumentasi portofolio. |
+| Debugging | Menggunakan Flutter DevTools, logging, dan profiling performa. |
+
+---
+
+### 3.2 Package yang Perlu Dipelajari
+
+| Package | Fungsi |
+|---|---|
+| `google_mlkit_text_recognition` | OCR atau pengenalan teks dari gambar. |
+| `google_mlkit_barcode_scanning` | Membaca barcode dan QR code. |
+| `google_mlkit_face_detection` | Mendeteksi wajah pada gambar atau kamera. |
+| `google_mlkit_object_detection` | Deteksi dan tracking objek. |
+| `tflite_flutter` | Menjalankan model TensorFlow Lite di Flutter. |
+| `camera` | Mengakses kamera untuk input gambar atau video. |
+| `image_picker` | Mengambil gambar dari galeri atau kamera. |
+| `permission_handler` | Mengelola izin kamera, storage, dan akses perangkat. |
+| `image` | Manipulasi gambar sebelum masuk ke model. |
+| `path_provider` | Menyimpan atau membaca file lokal. |
+| `hive` / `sqflite` | Menyimpan hasil prediksi atau histori lokal. |
+| `dio` | Integrasi API jika aplikasi memakai pola hybrid AI. |
+
+---
+
+### 3.3 Proyek Latihan yang Harus Dibuat
+
+| Urutan | Proyek | Tujuan Pembelajaran |
 |---|---|---|
-| Bulan 1 | Flutter dasar, kamera, permission, ML Kit | Aplikasi OCR |
-| Bulan 2 | TensorFlow Lite dan klasifikasi gambar | Aplikasi klasifikasi |
-| Bulan 3 | Clean Architecture dan testing | Repository yang rapi |
-| Bulan 4–5 | Object detection real-time | Aplikasi deteksi objek |
-| Bulan 6 | Pose detection dan optimasi | Aplikasi kebugaran |
-| Bulan 7–8 | Dataset dan custom model | Model konteks lokal |
-| Bulan 9 | Platform channel | Integrasi native |
-| Bulan 10 | On-device LLM atau MediaPipe | Prototype asisten lokal |
-| Bulan 11 | Publikasi dan pengujian | Open beta |
-| Bulan 12 | Portofolio dan persiapan karier | CV, GitHub, dan demo |
+| 1 | **OCR Receipt Scanner** | Membaca teks dari struk/nota dan menampilkan hasilnya. |
+| 2 | **QR & Barcode Inventory App** | Membuat aplikasi stok barang dengan scanner kode. |
+| 3 | **Image Classification App** | Menggunakan model `.tflite` untuk klasifikasi gambar. |
+| 4 | **Plant Disease Detector** | Mendeteksi penyakit daun dari gambar sebagai contoh AgriTech. |
+| 5 | **AI Notes Assistant** | Menyimpan catatan dan memberi ringkasan atau kategori otomatis. |
+| 6 | **Offline Smart Assistant Prototype** | Membuat prototipe asisten lokal sederhana menggunakan model ringan atau integrasi native. |
 
 ---
 
-# Kesimpulan
+### 3.4 Portofolio yang Dibutuhkan
 
-AI on-device merupakan tren yang memiliki peluang besar bagi developer Flutter karena dapat menghadirkan fitur cerdas, cepat, offline, dan lebih menjaga privasi. Penguasaan bidang ini membutuhkan kombinasi kemampuan Flutter, dasar machine learning, integrasi model, optimasi performa, testing, keamanan, dan dokumentasi.
+Portofolio Mobile AI Developer sebaiknya tidak hanya berisi kode, tetapi juga menunjukkan proses berpikir dan kualitas implementasi. Isi portofolio yang disarankan:
 
-Roadmap menjadi Mobile AI Developer harus dilakukan secara bertahap. Tahap awal berfokus pada Flutter, kamera, ML Kit, dan TensorFlow Lite. Tahap menengah berfokus pada model khusus, deteksi real-time, arsitektur, dan pengujian. Tahap lanjut berfokus pada training model, on-device LLM, optimasi, keamanan, dan kontribusi open-source.
+1. **Repository GitHub yang rapi**  
+   Berisi source code, struktur folder yang jelas, dan commit history yang wajar.
 
-Dengan portofolio yang relevan terhadap kebutuhan Indonesia, developer dapat menargetkan peluang karier di sektor kesehatan, pendidikan, pertanian, fintech, pemerintahan, manufaktur, dan startup berbasis AI.
+2. **README.md lengkap**  
+   Menjelaskan tujuan aplikasi, fitur AI, package yang digunakan, cara menjalankan project, screenshot, dan link demo.
+
+3. **Demo video singkat**  
+   Menampilkan aplikasi berjalan di emulator atau perangkat asli.
+
+4. **Dokumentasi performa**  
+   Cantumkan ukuran model, waktu inferensi, ukuran APK, dan perangkat yang digunakan untuk pengujian.
+
+5. **Catatan privasi**  
+   Jelaskan apakah data diproses secara lokal atau dikirim ke server.
+
+6. **Arsitektur aplikasi**  
+   Sertakan diagram sederhana seperti alur input gambar → preprocessing → inferensi → output.
+
+7. **APK atau release build**  
+   Sediakan build yang bisa diuji oleh dosen, recruiter, atau pengguna.
 
 ---
+
+### 3.5 Target Karier dan Perusahaan di Indonesia
+
+Berikut target karier yang relevan bagi Mobile AI Developer di Indonesia:
+
+| Sektor | Contoh Perusahaan / Target | Alasan Relevan |
+|---|---|---|
+| HealthTech | Halodoc, Alodokter | Membutuhkan aplikasi mobile dengan fitur cerdas, privasi data, dan pengalaman pengguna yang baik. |
+| EdTech | Ruangguru, platform belajar digital, startup edukasi lokal | Cocok untuk OCR soal, rekomendasi materi, chatbot belajar, dan personalisasi pembelajaran. |
+| FinTech | DANA, OVO, GoPay, Jenius, Bank digital | Membutuhkan OCR dokumen, verifikasi identitas, deteksi fraud, dan pengalaman mobile yang cepat. |
+| Super App / On-demand | Gojek/GoTo, Grab Indonesia | Membutuhkan mobile developer yang memahami performa aplikasi skala besar dan fitur cerdas. |
+| AgriTech / IoT | eFishery, startup pertanian presisi, smart farming | Membutuhkan computer vision, pencatatan data lapangan, dan aplikasi offline-first. |
+| Konsultan IT / Software House | Software house lokal dan nasional | Cocok sebagai tempat awal membangun pengalaman project Flutter + AI. |
+
+---
+
+## 4. Daftar Sub-Topik Berdasarkan Urgensi dan Tingkat Kesulitan
+
+### 4.1 Fondasi — Wajib Sekarang
+
+| Sub-Topik | Urgensi | Tingkat Kesulitan | Target Output |
+|---|---|---|---|
+| Dart dan Flutter dasar | Sangat tinggi | Mudah–Menengah | Aplikasi Flutter sederhana dengan navigasi. |
+| Widget, layout, form, navigation | Sangat tinggi | Mudah–Menengah | UI aplikasi mobile yang rapi. |
+| State management dasar | Tinggi | Menengah | Aplikasi dengan pengelolaan data yang stabil. |
+| Local storage | Tinggi | Menengah | Menyimpan hasil analisis AI secara lokal. |
+| Camera dan image picker | Sangat tinggi | Menengah | Aplikasi dapat mengambil gambar sebagai input. |
+| Permission handling | Tinggi | Mudah | Aplikasi dapat meminta izin kamera/storage. |
+| Dasar machine learning | Tinggi | Menengah | Memahami input, model, inferensi, output. |
+| GitHub README | Tinggi | Mudah | Dokumentasi portofolio yang siap dinilai. |
+
+---
+
+### 4.2 Menengah — 3 Bulan ke Depan
+
+| Sub-Topik | Urgensi | Tingkat Kesulitan | Target Output |
+|---|---|---|---|
+| Google ML Kit Text Recognition | Tinggi | Menengah | Aplikasi OCR scanner. |
+| Barcode dan QR scanning | Tinggi | Menengah | Aplikasi inventory sederhana. |
+| TFLite model integration | Tinggi | Menengah–Sulit | Aplikasi klasifikasi gambar. |
+| Preprocessing gambar | Sedang | Menengah | Gambar dapat disesuaikan dengan input model. |
+| Performance profiling | Tinggi | Menengah | Mengetahui bottleneck inferensi. |
+| Error handling model AI | Tinggi | Menengah | Aplikasi tetap stabil jika prediksi gagal. |
+| Clean Architecture sederhana | Sedang | Menengah | Struktur project lebih profesional. |
+| Testing dasar | Sedang | Menengah | Unit test dan widget test untuk fitur utama. |
+
+---
+
+### 4.3 Lanjutan — 6 sampai 12 Bulan ke Depan
+
+| Sub-Topik | Urgensi | Tingkat Kesulitan | Target Output |
+|---|---|---|---|
+| Custom model training | Tinggi | Sulit | Model AI dilatih sesuai dataset sendiri. |
+| Quantization dan optimization | Tinggi | Sulit | Model lebih kecil dan cepat. |
+| GPU/NPU delegate | Sedang | Sulit | Inferensi lebih optimal pada perangkat tertentu. |
+| On-device LLM | Sedang–Tinggi | Sulit | Prototype chatbot lokal. |
+| Federated learning concept | Sedang | Sulit | Memahami pembelajaran model tanpa mengirim data mentah. |
+| Platform channel Flutter | Tinggi | Sulit | Integrasi fitur native Android/iOS. |
+| Security dan privacy AI | Tinggi | Sulit | Aplikasi memiliki kebijakan pemrosesan data yang aman. |
+| Publikasi aplikasi | Tinggi | Menengah–Sulit | Aplikasi masuk Play Store/open beta. |
+
+---
+
+## 5. Rencana Belajar 12 Bulan
+
+### Bulan 1–3
+- Memperkuat Dart dan Flutter.
+- Membuat aplikasi OCR sederhana.
+- Mempelajari `google_mlkit_text_recognition`.
+- Membuat README dan video demo.
+- Mengunggah project ke GitHub.
+
+### Bulan 4–6
+- Mempelajari `tflite_flutter`.
+- Membuat image classification app.
+- Menguji performa aplikasi di perangkat berbeda.
+- Mempelajari struktur project yang lebih rapi.
+- Menambahkan testing dasar.
+
+### Bulan 7–9
+- Mempelajari custom model dan optimasi.
+- Membuat project AgriTech atau HealthTech berbasis computer vision.
+- Membuat dokumentasi performa dan privasi.
+- Mulai membangun profil LinkedIn dan GitHub yang profesional.
+
+### Bulan 10–12
+- Mempelajari on-device LLM atau integrasi native.
+- Membuat capstone project Mobile AI.
+- Mempublikasikan aplikasi dalam bentuk APK/release.
+- Melamar magang atau junior mobile developer pada perusahaan target.
+
+---
+
+## 6. Kesimpulan
+
+AI on-device merupakan tren penting dalam mobile computing karena membuat aplikasi mampu memproses data secara cerdas langsung di perangkat pengguna. Keunggulannya terletak pada privasi, kecepatan, kemampuan offline, dan efisiensi biaya server. Bagi developer Flutter, tren ini membuka peluang besar untuk membuat aplikasi lintas platform yang tidak hanya menarik secara tampilan, tetapi juga memiliki kemampuan AI yang praktis.
+
+Untuk menjadi Mobile AI Developer, penguasaan Flutter saja belum cukup. Developer perlu menambahkan kemampuan integrasi package AI, pemahaman dasar machine learning, optimasi performa, pengelolaan model, dan dokumentasi portofolio. Dengan roadmap yang jelas, mahasiswa dapat memulai dari proyek sederhana seperti OCR scanner, lalu berkembang menuju aplikasi AI mobile yang lebih kompleks seperti klasifikasi gambar, deteksi objek, atau asisten offline.
+
+Dalam konteks Indonesia, AI on-device sangat relevan karena dapat membantu mengatasi keterbatasan koneksi internet, meningkatkan privasi data, serta membuka peluang pada sektor kesehatan, pendidikan, keuangan, UMKM, dan pertanian. Oleh karena itu, tren AI on-device layak dijadikan spesialisasi bagi developer Flutter yang ingin mempersiapkan karier di masa depan.
+
+---
+
+## 7. Referensi
+
+- Modul Ajar Mobile Programming Lanjutan Pertemuan 15, Universitas Negeri Padang. Topik: Tren Terkini Mobile Computing: AI on-Device, IoT, PWA, dan Super Apps.
+- Google AI Edge. LiteRT: High-performance on-device machine learning. https://ai.google.dev/edge/litert
+- Google ML Kit. Text Recognition v2. https://developers.google.com/ml-kit/vision/text-recognition/v2
+- Google AI Edge. MediaPipe LLM Inference API. https://ai.google.dev/edge/mediapipe/solutions/genai/llm_inference
+- Flutter Documentation. State Management. https://docs.flutter.dev/data-and-backend/state-mgmt
+- Flutter Documentation. Assets and Images. https://docs.flutter.dev/ui/assets/assets-and-images
+- Pub.dev. tflite_flutter package. https://pub.dev/packages/tflite_flutter
+- Pub.dev. google_mlkit_text_recognition package. https://pub.dev/packages/google_mlkit_text_recognition
